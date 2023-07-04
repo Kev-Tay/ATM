@@ -39,20 +39,12 @@ public class Account {
     }
 
     public double withdrawFromAccount(double withdrawalAmount){
-        accountBalance = (accountBalance - withdrawalAmount);
-        return accountBalance;
+         return accountBalance = (accountBalance - withdrawalAmount);
     }
     public double depositIntoAccount(double depositAmount){
-        accountBalance = (accountBalance + depositAmount);
-        return accountBalance;
-    }
+        return accountBalance = (accountBalance + depositAmount);
 
-    //todo Create transfer method
-//    public double tranferFromAccountIntoAccount(double transferAmount, String accountToTranferFrom, String accountToTransferTo){
-//        accountBalance = accountBalance - transferAmount;
-//        return accountBalance;
-//
-//    }
+    }
 
     public Account(String accountName, String accountType, Double accountBalance){
         this.accountName = accountName;

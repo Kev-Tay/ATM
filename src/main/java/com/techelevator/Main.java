@@ -108,34 +108,50 @@ public class Main extends AccountUser {
                                 System.out.println("Your current balance is: $" + accounts.get(userSelection1 - 1).getAccountBalance());
                                 System.out.print("How much would you like to Withdraw: ");
                                 double withdrawAmount = Double.parseDouble(userInput.nextLine());
-                                withdrawFromAccount(withdrawAmount);
+                                accounts.get(userSelection1 - 1).withdrawFromAccount(withdrawAmount);
                                 System.out.println();
                                 System.out.println("Amount withdrawn: $" + withdrawAmount);
-                                System.out.println("Your Previous Balance was: $" + (accounts.get(userSelection1 - 1).getAccountBalance()));
+                                System.out.println("Your Previous Balance was: $" + (accounts.get(userSelection1 - 1).getAccountBalance()+withdrawAmount));
                                 System.out.println("Your Current Balance is: $" + accounts.get(userSelection1 - 1).getAccountBalance());
                                 menuOptions.pause();
                                 userSelection = userInput.nextLine();
                             } else if (userSelection.equals("3")) { //Transfer
-                                System.out.println();
-                                System.out.println("Your current balance is: $" + accounts.get(userSelection1 - 1).getAccountBalance());
-                                System.out.print("How much would you like to Transfer: ");
-                                double transferAmount = Double.parseDouble(userInput.nextLine());
-                                //todo finish transfer methods
+                                if(accounts.size() < 1){
+                                    System.out.println("You don't have enough accounts to transfer. Please open another account.");
+                                }else {
+                                    System.out.println();
+                                    System.out.println("Your current balance is: $" + accounts.get(userSelection1 - 1).getAccountBalance());
+                                    System.out.println();
+                                    System.out.println("Please Select the Account you want to Transfer to: ");
+                                    for (int i = 0; i < accounts.size(); i++) {
+                                        int num;
+                                        System.out.println("(" + (i + 1) + ")  Account Name: " + accounts.get(i).getAccountName() + " | " +
+                                                " Account Type: " + accounts.get(i).getAccountType());
+                                    }
+                                    System.out.print("Select Account :");
+                                    int userSelection2 = Integer.parseInt(userInput.nextLine());
+                                   System.out.print("How much would you like to Transfer: ");
+                                   double transferAmount = Double.parseDouble(userInput.nextLine());
+                                   accounts.get(userSelection1 - 1).withdrawFromAccount(transferAmount);
+                                   accounts.get(userSelection2 - 1).depositIntoAccount(transferAmount);
+                                    System.out.println("Your new balance is:" + accounts.get(userSelection1 -1).getAccountBalance());
+                                    System.out.println();
+                                    menuOptions.pause();
+                                    userInput.nextLine();
+                                }
                             } else if (userSelection.equals("4")) {   //Deposit
                                 System.out.println();
                                 System.out.println("Your current balance is: $" + accounts.get(userSelection1 - 1).getAccountBalance());
                                 System.out.print("How much would you like to Deposit: ");
                                 double depositAmount = Double.parseDouble(userInput.nextLine());
-                                depositIntoAccount(depositAmount);
+                                accounts.get(userSelection1 - 1).depositIntoAccount(depositAmount);
                                 System.out.println();
-                                System.out.println("Amount withdrawn: $" + depositAmount);
+                                System.out.println("Amount deposited: $" + depositAmount);
                                 System.out.println("Your Previous Balance was: $" + (accounts.get(userSelection1 - 1).getAccountBalance()-depositAmount));
                                 System.out.println("Your Current Balance is: $" + accounts.get(userSelection1 - 1).getAccountBalance());
                                 menuOptions.pause();
                                 userSelection = userInput.nextLine();
                             } else break;
-
-
                         }
                     } else System.out.println("You don't have any open accounts.");
                     System.out.println();
