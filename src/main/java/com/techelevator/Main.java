@@ -186,11 +186,11 @@ public class Main extends AccountUser {
                     }
                 }
 
-//                else
-//                    System.out.println("Thank you for using our system. We'll see you later.");
-//                    System.exit(1);
+                else {
+                    System.out.println("Thank you for using our system. We'll see you later.");
+                    System.exit(1);
 
-
+                }
             }
         }
     }
