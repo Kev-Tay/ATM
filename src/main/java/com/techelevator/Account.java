@@ -26,6 +26,7 @@ public class Account {
         this.accountType = accountType;
         return accountType;
     }
+    
     public String getAccountType(){
         return accountType;
     }
@@ -34,6 +35,7 @@ public class Account {
         this.accountName= accountName;
         return accountName;
     }
+
     public String getAccountName(){
         return accountName;
     }
@@ -41,6 +43,7 @@ public class Account {
     public double withdrawFromAccount(double withdrawalAmount){
          return accountBalance = (accountBalance - withdrawalAmount);
     }
+
     public double depositIntoAccount(double depositAmount){
         return accountBalance = (accountBalance + depositAmount);
 
@@ -50,13 +53,6 @@ public class Account {
         this.accountName = accountName;
         this.accountType = accountType;
         this.accountBalance = accountBalance;
-
     }
-    public Account(){
-
-    }
-
-
-
-
+    public Account(){}
 }

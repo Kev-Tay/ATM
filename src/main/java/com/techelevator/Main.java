@@ -161,6 +161,14 @@ public class Main extends AccountUser {
                 if (userSelection.equals("2")) {                                                                       //CREATE A BANK ACCOUNT
                     menuOptions.createAccountMenu();
                     userSelection = userInput.nextLine();
+                    while (!userSelection.equals("1") && !userSelection.equals("2") && !userSelection.equals("3")) {
+                        menuOptions.invalidEntry();
+                        menuOptions.pause();
+                        userInput.nextLine();
+                        menuOptions.createAccountMenu();
+                        userSelection = userInput.nextLine();
+                    }
+
                     if (userSelection.equals("1")) {
                         System.out.print("Please give this account a name: ");
                         String userInputAccountName = userInput.nextLine();
@@ -172,7 +180,7 @@ public class Main extends AccountUser {
                         System.out.println("Your account has been created.");
                         menuOptions.pause();
                         userInput.nextLine();
-                    } else {
+                    } else if (userSelection.equals("2")) {
                         System.out.print("Please give this account a name: ");
                         String userInputAccountName = userInput.nextLine();
                         System.out.print("Please enter initial deposit: ");
@@ -183,10 +191,10 @@ public class Main extends AccountUser {
                         System.out.println("Your account has been created.");
                         menuOptions.pause();
                         userInput.nextLine();
-                    }
-                }
+                    } else {
 
-                else {
+                    }
+                }else {
                     System.out.println("Thank you for using our system. We'll see you later.");
                     System.exit(1);
 

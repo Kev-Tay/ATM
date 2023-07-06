@@ -14,11 +14,9 @@ public class MenuOptions extends AccountUser {
         System.out.println("(2) - Create New Account");
         System.out.print("Enter Here: ");
     }
+
     public void accountMenu(){
         System.out.println();
-//        System.out.println("--------------------------------------------");
-//        System.out.println("--------------- Account--------------");
-//        System.out.println("--------------------------------------------");
         System.out.println("(1) - View Balance");
         System.out.println("(2) - Withdraw Funds");
         System.out.println("(3) - Transfer Funds");
@@ -26,7 +24,6 @@ public class MenuOptions extends AccountUser {
         System.out.println("(5) - Back to Main Menu");
         System.out.print("Enter Here: ");
     }
-
 
     public void accountsViewMenu(){
 
@@ -42,18 +39,14 @@ public class MenuOptions extends AccountUser {
         System.out.println("--------------------------------");
     }
 
-
     public void createAccountMenu(){
         System.out.println();
         System.out.println("Select the type of account you want to create: ");
         System.out.println("(1) - Checkings Account");
         System.out.println("(2) - Savings Account");
-        System.out.println("(3) - Exit");
+        System.out.println("(3) - Go Back");
         System.out.print("Enter Here:  ");
     }
-
-
-
 
     public void pause() {
         System.out.println();
@@ -65,6 +58,7 @@ public class MenuOptions extends AccountUser {
         System.out.println();
         System.out.println("Your Current Account Balance is: ");
     }
+
     public void invalidEntry(){
         System.out.println();
         System.out.println("Invalid entry. Please try again.");
